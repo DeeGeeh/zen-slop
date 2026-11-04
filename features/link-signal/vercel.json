@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node -e \"const fs = require('fs'); fs.mkdirSync('dist/service', { recursive: true }); fs.copyFileSync('service/index.html', 'dist/service/index.html')\"",
+  "outputDirectory": "dist/service",
+  "functions": { "api/score.ts": { "maxDuration": 30 } }
+}

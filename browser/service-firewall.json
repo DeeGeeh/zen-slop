@@ -1,0 +1,17 @@
+{
+  "firewallEnabled": true,
+  "rules": [
+    {
+      "name": "Link Signal per-IP request limit",
+      "active": true,
+      "conditionGroup": [{ "conditions": [{ "type": "path", "op": "eq", "value": "/api/score" }] }],
+      "action": { "mitigate": { "action": "rate_limit", "rateLimit": { "algo": "fixed_window", "window": 60, "limit": 60, "keys": ["ip"], "action": "deny" }, "actionDuration": "1m" } }
+    },
+    {
+      "name": "Link Signal alpha global request budget",
+      "active": true,
+      "conditionGroup": [{ "conditions": [{ "type": "path", "op": "eq", "value": "/api/score" }] }],
+      "action": { "mitigate": { "action": "rate_limit", "rateLimit": { "algo": "fixed_window", "window": 3600, "limit": 1000, "keys": [], "action": "deny" }, "actionDuration": "1h" } }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+:root { color-scheme: light dark; font: 16px/1.5 system-ui; color: #202124; background: #fafafa; }
+body { margin: 0; }
+main { max-width: 440px; margin: 10vh auto; padding: 24px; }
+h1 { font-size: 26px; letter-spacing: -.03em; margin-bottom: 8px; }
+form { display: grid; gap: 14px; margin-top: 32px; }
+#local-settings:not([hidden]) { display: grid; gap: 10px; }
+.legend { list-style: none; padding: 0; display: grid; gap: 12px; margin: 28px 0; }
+.legend li { display: flex; gap: 12px; align-items: center; }
+.legend svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.inactive { opacity: .2; }
+input[type=password] { font: inherit; padding: 10px; border: 1px solid #8b8b8b; border-radius: 6px; background: #fff; color: inherit; }
+.toggle { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+input[type=checkbox] { width: 18px; height: 18px; accent-color: #202124; }
+p { margin: 0; }
+button { justify-self: start; font: inherit; padding: 8px 22px; border: 1px solid #202124; border-radius: 6px; background: #202124; color: white; cursor: pointer; }
+:focus-visible { outline: 2px solid #366cce; outline-offset: 3px; }
+@media (prefers-color-scheme: dark) {
+  :root { background: #171819; color: #eee; }
+  input[type=password] { background: #242628; }
+  input[type=checkbox] { accent-color: #ddd; }
+  button { background: #eee; color: #202124; border-color: #eee; }
+}

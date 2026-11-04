@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link Signal</title>
+    <link rel="stylesheet" href="options.css">
+    <script type="module" src="options.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Link Signal</h1>
+      <p>A little more signal before you click.</p>
+      <ul class="legend">
+        <li><svg viewBox="4 4 16 18" aria-hidden="true"><path d="M7 20v-4"/><path class="inactive" d="M12 20v-8M17 20V8"/></svg> Very likely human</li>
+        <li><svg viewBox="4 4 16 18" aria-hidden="true"><path d="M7 20v-4M12 20v-8"/><path class="inactive" d="M17 20V8"/></svg> Not sure</li>
+        <li><svg viewBox="4 4 16 18" aria-hidden="true"><path d="M7 20v-4M12 20v-8M17 20V8"/></svg> Very likely AI</li>
+      </ul>
+      <form>
+        <div id="local-settings">
+          <label for="token">Local service access token</label>
+          <input id="token" type="password" autocomplete="off" maxlength="256" spellcheck="false">
+        </div>
+        <label class="toggle"><input id="enabled" type="checkbox"> Analyze search-result links</label>
+        <p>Public result URLs go to Link Signal. Article text goes to OpenRouter and its model provider. Signals are estimates, not proof.</p>
+        <button type="submit">Save</button>
+        <output aria-live="polite"></output>
+      </form>
+    </main>
+  </body>
+</html>

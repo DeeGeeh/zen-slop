@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Link Signal",
+  "version": "0.1.0",
+  "description": "Estimated AI authorship beside search-result links.",
+  "browser_specific_settings": {
+    "gecko": { "id": "link-signal@zen-slop.local", "strict_min_version": "142.0", "data_collection_permissions": { "required": ["websiteContent", "browsingActivity"] } }
+  },
+  "permissions": ["storage", "http://127.0.0.1:43127/*"],
+  "incognito": "not_allowed",
+  "background": { "scripts": ["background.js"] },
+  "browser_action": { "default_title": "Link Signal settings" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "content_scripts": [{
+    "matches": ["https://www.google.com/search*", "https://google.com/search*", "https://www.bing.com/search*", "https://bing.com/search*", "https://duckduckgo.com/*", "https://www.duckduckgo.com/*", "https://html.duckduckgo.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}

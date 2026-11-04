@@ -1,0 +1,39 @@
+{
+  "name": "zen-link-signal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MPL-2.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "tsc --noEmit",
+    "pretest": "npm run build",
+    "test": "tsx --test test/*.test.ts",
+    "lint": "web-ext lint --source-dir dist/extension --warnings-as-errors",
+    "package": "npm run build && npm run lint && web-ext build --source-dir dist/extension --artifacts-dir dist/artifacts --overwrite-dest",
+    "start": "tsx --env-file=.env src/server/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.6",
+    "@mozilla/readability": "^0.6.0",
+    "hono": "^4.13.16",
+    "ipaddr.js": "^2.5.0",
+    "jsdom": "^26.1.0",
+    "lru-cache": "^11.5.3",
+    "lucide": "^1.67.0",
+    "undici": "^8.12.3",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^143.0.1",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "web-ext": "^10.8.0"
+  }
+}

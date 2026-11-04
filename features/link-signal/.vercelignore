@@ -1,0 +1,8 @@
+.env*
+.vercel
+node_modules
+dist
+test
+public
+src/extension
+README.md

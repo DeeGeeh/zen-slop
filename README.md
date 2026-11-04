@@ -4,6 +4,16 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/.
    -->
 <!-- TODO: Get a job -->
+### Link Signal fork
+
+Link Signal is a Linux browser alpha based on Zen, with built-in AI-authorship
+indicators beside search-result links and a hosted scoring service. See
+[`browser`](./browser/README.md) for installation, packaging, and deployment, and
+[`features/link-signal`](./features/link-signal/README.md) for the feature implementation.
+The alpha uses manual browser updates; it is not ready for everyday use.
+
+The upstream Zen documentation follows.
+
 <img src="./docs/assets/zen-dark.svg" width="100px" align="left">
 
 ### `Zen Browser`
