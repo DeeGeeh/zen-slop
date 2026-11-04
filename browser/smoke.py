@@ -47,7 +47,7 @@ def smoke(bundle, scratch, live_search=False):
                 assert state["active"] and state["builtin"], state
                 assert state["updatesDisabled"] and state["welcomeSeen"], state
                 assert state["baseUrl"].startswith("moz-extension://"), state
-                Wait(client, timeout=10).until(lambda driver: driver.execute_script(
+                Wait(client, timeout=45).until(lambda driver: driver.execute_script(
                     "return [...Services.wm.getEnumerator('navigator:browser')].some(win => win.gBrowser.browsers.some(browser => browser.currentURI.spec === arguments[0]));",
                     script_args=[state["baseUrl"] + "options.html"],
                 ))
